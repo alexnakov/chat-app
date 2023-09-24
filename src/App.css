@@ -40,27 +40,18 @@
   }
 }
 
-.register-container {
-  border: 1px solid purple;
-}
-
-.register-container > h1, .register-container > h2 {
-  margin: 0 auto 10px auto;
-}
-
-form.register {
+form.reg-login {
   width: 250px;
-  height: 280px;
-  border: 1px solid purple;
+  padding-bottom: 20px;
 }
 
-form.register > label {
+form.reg-login > label {
   margin: 5px;
   display: block;
   text-align: left;
   padding: 10px 0 0 10px;
 }
-form.register > input {
+form.reg-login > input {
   display: block;
   width: 200px;
   margin: 10px 0 0 15px;
@@ -68,7 +59,11 @@ form.register > input {
   line-height: 1.4rem;
 }
 
-form.register > input[type="submit"] {
+form.reg-login > input:focus-visible {
+  outline-color: purple;
+}
+
+form.reg-login > input[type="submit"] {
   width: 210px;
   background-color: #c69af1;
   color: whitesmoke;
