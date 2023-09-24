@@ -12,6 +12,9 @@ export default function Register() {
         <label htmlFor='avatar-img'>Avatar</label>
         <input type="file" name="avatar-img" />
         <input type='submit' />
+        <div id="have-account">
+          <label>Have an account? </label><a href="#">Login</a>
+        </div>
       </form>
     </div>
   )
