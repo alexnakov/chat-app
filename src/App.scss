@@ -182,6 +182,22 @@ input[type="submit"] {
             height: 50px;
             object-fit: cover;
           }
+
+          .user-chat-info {
+            span.name {     
+              display: block;       
+              text-align: left;
+              margin-bottom: 10px;
+              font-weight: bolder;
+            }
+
+            .latest-message {
+              display: block;
+              text-wrap: nowrap;
+              padding-right: 10px;
+              margin: 0;
+            }
+          }
         }
       }
     }
