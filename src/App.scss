@@ -243,6 +243,12 @@ input[type="submit"] {
           padding: 5px;
           outline: none;
           border: none;
+          font-size: 18px;
+          width: 100%;
+
+          &::placeholder {
+            color: lightgrey;
+          }
         }
 
         .send {
@@ -250,6 +256,7 @@ input[type="submit"] {
           align-items: center;
           justify-content: space-between;
           gap: 10px;
+          margin: 0 10px 0 10px;
 
           .send-icons {
             width: 30px;
@@ -258,9 +265,9 @@ input[type="submit"] {
           }
 
           button {
-            padding: 5px 10px 5px 10px;
-            margin-right: 10px;
+            padding: 5px 10px;
             background-color: #617dfb;
+            border: none;
             cursor: pointer;
           }
         }
