@@ -204,6 +204,26 @@ input[type="submit"] {
 
     .chat {
       flex: 2;
+
+      .chat-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        background-color: #9454ee;
+
+        .username {
+          padding-left: 15px;
+          font-weight: bolder;
+        }
+
+        .chat-icons * {
+          padding-right: 10px;
+          height: 24px;
+          width: 24px;
+          color: white;
+        }
+      }
     }
   }
 }
