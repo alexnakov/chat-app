@@ -144,6 +144,46 @@ input[type="submit"] {
 
         }
       }
+
+      .search {
+        .search-form {
+          margin-top: 10px;
+          border-bottom: 1px solid black;
+
+          input[type='text'] {
+            outline: none;
+            border: none;
+            background-color: #a26fd5;
+            color: #6716d8;
+            margin-bottom: 5px;
+            &::placeholder {
+              color:#6716d8
+            }
+          }
+        }
+      }
+
+      .chats {
+        .user-chat {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          height: 60px;
+          border-bottom: 1px solid black ;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #8e239e;
+          }
+
+          img {
+            padding-left: 10px;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+          }
+        }
+      }
     }
 
     .chat {
