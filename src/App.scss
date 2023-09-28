@@ -88,4 +88,66 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.home {
+  background-color: #c69af1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .container {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 65%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+      background-color: #a26fd5;
+      border-right: 1px solid black;
+      flex: 1;
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background-color: #6716d8;
+        height: 50px;
+
+        .logo {
+          padding-left: 10px;
+          font-weight: bold;
+        }
+
+        .user {
+          display: flex;
+          gap: 10px;
+          padding-right: 5px;
+
+          img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          button {
+            color: whitesmoke;
+            background-color: #a26fd5;
+            border: 1px solid black;
+            cursor: pointer;
+          }
+          
+
+        }
+      }
+    }
+
+    .chat {
+      flex: 2;
+    }
+  }
+}
