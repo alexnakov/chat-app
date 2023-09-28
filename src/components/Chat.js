@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoCameraSharp, IoPersonAddSharp, IoMenu } from "react-icons/io5";
+import Messages from './Messages';
+import Input from './Input';
 
 export default function Chat() {
   return (
@@ -12,6 +14,8 @@ export default function Chat() {
           <IoMenu />
         </div>
       </div>
+      <Messages />
+      <Input />
     </div>
   )
 }

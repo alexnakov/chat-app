@@ -224,6 +224,47 @@ input[type="submit"] {
           color: white;
         }
       }
+
+      .messages {
+        background-color: aliceblue;
+        padding: 10px;
+        height: calc(100% - 120px );
+      }
+
+      .input {
+        height: 50px;
+        background-color: rgb(149, 149, 244);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input[type='text'] {
+          margin-left: 5px;
+          padding: 5px;
+          outline: none;
+          border: none;
+        }
+
+        .send {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+
+          .send-icons {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+
+          button {
+            padding: 5px 10px 5px 10px;
+            margin-right: 10px;
+            background-color: #617dfb;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
