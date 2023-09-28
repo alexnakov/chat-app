@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
+import Sidebar from '../components/Sidebar'
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
         <div className='navbar-parent'>
           <Navbar />
         </div>
-        <div className='sidebar-parent'></div>
+        <div className='sidebar-parent'>
+          <Sidebar />
+        </div>
         <div className='chatroom-parent'></div>
       </div>
     </div>
