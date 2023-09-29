@@ -239,28 +239,69 @@ input[type="submit"] {
 
           .message-info {
             color: grey;
+            padding-left: 15px;
 
-            img {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              object-fit: cover;
-              position: relative;
-              right: 15px;
+            .img-wrapper {
+              width: 60px;
+            
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                position: relative;
+                right: 15px;
+              }
+            }
+
+            div.message-time {
+              width: 60px;
+              font-size: small;
             }
           }
 
           .message-content {
+            display: flex;
+            flex-direction: column;
+
             img {
               width: 40%;
+              float: left;
             }
 
             p {
               background-color: whitesmoke;
               padding: 10px 20px;
               border-radius: 0 10px 10px 10px;
+              max-width: max-content;
             }
 
+          }
+
+          &.owner {
+            flex-direction: row-reverse;
+            
+            .message-info {
+              padding-right: 15px;
+
+              img {
+                position: relative;
+                left: 15px;
+              }
+            }
+
+            .message-content {
+              align-items: flex-end;
+              p {
+                background-color: #617dfb;
+                border-radius: 10px 0 10px 10px;
+              }
+
+              img {
+                float: right;
+              }
+            }
+            
           }
         }
       }
