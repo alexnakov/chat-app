@@ -2,12 +2,13 @@ import React from 'react'
 import AddImgIcon from '../images/add-img-icon.png'
 
 export default function Register() {
+  
   return (
     <div style={{border: '2px solid purple', borderRadius: '5px'}}>
       <h1>FibreChat</h1>
       <h2>Register</h2>
       <form className='reg-login'>
-        <input type="text" placeholder='Name'/>
+        <input type="text" placeholder='Display Name'/>
         <input type="email"  placeholder='Email'/>
         <input type="password"  placeholder='Password'/>
         <label htmlFor='avatar-img-input' id="avatar-label">
