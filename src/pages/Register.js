@@ -3,7 +3,6 @@ import AddImgIcon from '../images/add-img-icon.png'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
 import { auth, storage, db } from '../firebase'
-import { MongoClient } from 'mongodb';
 
 export default function Register() {
   const [err, setErr] = useState(false)
@@ -27,8 +26,6 @@ export default function Register() {
     
     // writing user data to db
     await writeUserData(newUserResponse.user.uid, displayName, email, downloadURL)
-
-    const mongoClient = new MongoClient('')
   }
   
   return (
