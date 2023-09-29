@@ -24,8 +24,6 @@ export default function Register() {
     await updateProfile(newUserResponse.user, {displayName: displayName, photoURL: downloadURL})
     console.log(newUserResponse.user)
     
-    // writing user data to db
-    await writeUserData(newUserResponse.user.uid, displayName, email, downloadURL)
   }
   
   return (
