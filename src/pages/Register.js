@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import AddImgIcon from '../images/add-img-icon.png'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { auth, storage } from '../firebase'
+import { doc, setDoc } from "firebase/firestore"
+import { auth, db, storage } from '../firebase'
 
 export default function Register() {
   const [err, setErr] = useState(false)
@@ -22,8 +23,12 @@ export default function Register() {
 
     // updating user info
     await updateProfile(newUserResponse.user, {displayName: displayName, photoURL: downloadURL})
-    console.log(newUserResponse.user)
     
+    await setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    });
   }
   
   return (
