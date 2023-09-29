@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import AddImgIcon from '../images/add-img-icon.png'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
-import { auth, storage } from '../firebase'
+import { auth, storage, db } from '../firebase'
+import { MongoClient } from 'mongodb';
 
 export default function Register() {
   const [err, setErr] = useState(false)
@@ -17,12 +18,17 @@ export default function Register() {
     const newUserResponse = await createUserWithEmailAndPassword(auth, email, password)
 
     const avatarRef = ref(storage, displayName)
-    const imgUploadResponse = await uploadBytesResumable(avatarRef, file)
+    await uploadBytesResumable(avatarRef, file)
     const downloadURL = await getDownloadURL(avatarRef)
 
+    // updating user info
     await updateProfile(newUserResponse.user, {displayName: displayName, photoURL: downloadURL})
-
     console.log(newUserResponse.user)
+    
+    // writing user data to db
+    await writeUserData(newUserResponse.user.uid, displayName, email, downloadURL)
+
+    const mongoClient = new MongoClient('')
   }
   
   return (
