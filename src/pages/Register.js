@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AddImgIcon from '../images/add-img-icon.png'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
 import { auth, storage } from '../firebase'
 
 export default function Register() {
@@ -19,7 +19,9 @@ export default function Register() {
       console.log(newUserResponse.user)
     })
 
-    
+    const avatarRef = ref(storage, displayName)
+    const imgUploadResponse = await uploadBytesResumable(avatarRef, file)
+    const downloadURL = await getDownloadURL(avatarRef)
   }
   
   return (
