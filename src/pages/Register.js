@@ -30,6 +30,9 @@ export default function Register() {
       email: email,
       photoURL: downloadURL,
     });
+
+    // will create a colections of chats soon
+    await setDoc(doc(db, "userChats", newUserResponse.user.uid), {})
   }
   
   return (
