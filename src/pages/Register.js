@@ -4,9 +4,11 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"
 import { auth, db, storage } from '../firebase'
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
   const [err, setErr] = useState(false)
+  const navigateToPath = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -33,6 +35,8 @@ export default function Register() {
 
     // will create a colections of chats soon
     await setDoc(doc(db, "userChats", newUserResponse.user.uid), {})
+  
+    navigateToPath("/")
   }
   
   return (
