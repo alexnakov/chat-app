@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import AddImgIcon from '../images/add-img-icon.png'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
-import { auth, storage, db } from '../firebase'
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { auth, storage } from '../firebase'
 
 export default function Register() {
   const [err, setErr] = useState(false)
@@ -36,7 +36,7 @@ export default function Register() {
         <input type="email"  placeholder='Email'/>
         <input type="password"  placeholder='Password'/>
         <label htmlFor='avatar-img-input' id="avatar-label">
-          <img src={AddImgIcon} alt="Add Image Icon" />
+          <img src={AddImgIcon} />
           <span>Add an avatar</span>
         </label>
         <input style={{display: "none"}} type="file" id="avatar-img-input" />
