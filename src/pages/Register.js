@@ -24,10 +24,11 @@ export default function Register() {
     // updating user info
     await updateProfile(newUserResponse.user, {displayName: displayName, photoURL: downloadURL})
     
-    await setDoc(doc(db, "cities", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA"
+    await setDoc(doc(db, "users", newUserResponse.user.uid), {
+      uid: newUserResponse.user.uid,
+      displayName: displayName,
+      email: email,
+      photoURL: downloadURL,
     });
   }
   
