@@ -15,13 +15,14 @@ export default function Register() {
     const file = e.target[3].files[0]
 
     const newUserResponse = await createUserWithEmailAndPassword(auth, email, password)
-    updateProfile(newUserResponse.user, {displayName: displayName}).then(() => {
-      console.log(newUserResponse.user)
-    })
 
     const avatarRef = ref(storage, displayName)
     const imgUploadResponse = await uploadBytesResumable(avatarRef, file)
     const downloadURL = await getDownloadURL(avatarRef)
+
+    await updateProfile(newUserResponse.user, {displayName: displayName, photoURL: downloadURL})
+
+    console.log(newUserResponse.user)
   }
   
   return (
