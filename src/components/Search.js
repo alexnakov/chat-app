@@ -17,7 +17,7 @@ export default function Search() {
     try {
       const querySnapshot = await getDocs(q)
       querySnapshot.forEach(doc => {
-        console.log(doc.data())
+        setUser(doc.data())
       })
     } catch {
       setErr(true)
@@ -35,6 +35,15 @@ export default function Search() {
         <input type='text' placeholder='Find a user...' 
           onChange={e=>setUsername(e.target.value)} 
           onKeyDown={handleEnterKey} />
+      </div>
+      <div className='chats'>
+        {err && <p style={{color: 'red'}}>User Not found</p>}
+        { user && <div style={{paddingBottom: '20px'}} className='user-chat'>
+          <img src={user.photoURL} />
+          <div className='user-chat-info'>
+            <span className='name'>{user.displayName}</span>
+          </div>
+        </div> } 
       </div>
     </div>
   )
