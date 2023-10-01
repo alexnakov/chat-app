@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"
 import { auth, db, storage } from '../firebase'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Register() {
   const [err, setErr] = useState(false)
@@ -56,7 +56,7 @@ export default function Register() {
 
         <input type='submit' value="Create Account"/>
         <div id="have-account">
-          <label>Have an account? </label><a href="#">Login</a>
+          <label>Have an account? </label><Link to="/login">Login</Link>
         </div>
       </form>
     </div>
