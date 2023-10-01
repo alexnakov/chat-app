@@ -16,6 +16,8 @@ function App() {
     if (currentUser.currentUser === null) {
       return (<Navigate to="login" />)
     }
+
+    return children
   }
 
   return (
