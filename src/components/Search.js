@@ -91,7 +91,7 @@ export default function Search() {
       <div className='chats'>
         {err && <p style={{color: 'red'}}>User Not found</p>}
         { user && <div onClick={handleSelect} style={{paddingBottom: '20px'}} className='user-chat'>
-          <img src={user.photoURL} />
+          <img src={user.photoURL} alt="" />
           <div className='user-chat-info'>
             <span className='name'>{user.displayName}</span>
           </div>
